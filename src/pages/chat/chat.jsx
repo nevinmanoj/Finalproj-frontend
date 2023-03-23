@@ -50,12 +50,15 @@ function Chat() {
 
             <ul>
                 {items.map((item, index) => (
-                    <li key={index}>{item['username']}:{item['data']}</li>
+                    <li key={index}>{item['username']}  :<span className="chatBubble">{item['data']}</span> </li>
                 ))}
             </ul>
-            <input type="text" id="inp" />
-            <button onClick={handleAddItem}>Send</button>
-        </div>
+            <div className="sendDiv">
+                <input type="text" id="inp" placeholder="Type your message here." />
+                <button className="sendBtn" onClick={handleAddItem}>Send</button>
+            </div>
+
+        </div >
     );
 }
 
