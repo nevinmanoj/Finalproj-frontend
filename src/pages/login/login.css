@@ -64,9 +64,10 @@ a {
 
 .vector-art {
   background-color: #EDF1D6;
-  height: 1117px;
-  width: 1171px;
+  /* height: ; */
+  /* width: 1171px; */
   align-items: center;
+
 }
 
 .Sign-In-Button-div {
@@ -76,6 +77,18 @@ a {
 
 
 }
+
+.cover-image {
+  height: 25rem;
+  width: 30rem;
+
+  margin-top: 8rem;
+  margin-left: 15rem;
+  border-radius: 4rem;
+  box-shadow: 5px 10px #e8e2d1;
+}
+
+
 
 .toSignup {
   display: flex;

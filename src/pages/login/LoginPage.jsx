@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./login.css"
+import SocialNetwork from '../../img/SocialNetwork.png';
 function LoginPage() {
 
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ function LoginPage() {
   };
 
   return (<div className="login-row"><div className="vector-art">
-    art will come </div> <div className="login-form">
+    <img className="cover-image" src={SocialNetwork} alt="" /> </div> <div className="login-form">
 
 
       <form onSubmit={handleLoginFormSubmit}>

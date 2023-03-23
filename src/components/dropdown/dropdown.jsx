@@ -1,14 +1,20 @@
-import edit from '../../img/edit.png'
-import logout from '../../img/log-out.png'
-import user from '../../img/user.png'
-import inbox from '../../img/envelope.png'
-import settings from '../../img/settings.png'
-import help from '../../img/question.png'
+import user from '../../img/user.png';
+import edit from '../../img/edit.png';
+import inbox from '../../img/envelope.png';
+import settings from '../../img/settings.png';
+import help from '../../img/question.png';
+import logout from '../../img/log-out.png';
+import person from '../../img/person.jpeg';
+import './dropdown.css';
+
+import { useNavigate } from "react-router-dom";
 
 
 import React, { useState, useEffect, useRef } from 'react';
 
 function DropDown() {
+
+    const navigate = useNavigate();
 
     const [open, setOpen] = useState(false);
 
@@ -35,18 +41,18 @@ function DropDown() {
         <div className="App">
             <div className='menu-container' ref={menuRef}>
                 <div className='menu-trigger' onClick={() => { setOpen(!open) }}>
-                    <img src={user}></img>
+                    <img src={person}></img>
                 </div>
 
                 <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} >
-                    <h3>The Kiet<br /><span>Website Designer</span></h3>
+
                     <ul>
-                        <DropdownItem img={user} text={"My Profile"} />
-                        <DropdownItem img={edit} text={"Edit Profile"} />
-                        <DropdownItem img={inbox} text={"Inbox"} />
+                        <div onClick={() => { navigate('/profile') }}><DropdownItem img={user} text={"My Profile"} /></div>
+
+                        {/* <DropdownItem img={inbox} text={"Inbox"} /> */}
                         <DropdownItem img={settings} text={"Settings"} />
-                        <DropdownItem img={help} text={"Helps"} />
-                        <DropdownItem img={logout} text={"Logout"} />
+                        <DropdownItem img={help} text={"Help"} />
+                        <div onClick={() => { navigate('/login') }}><DropdownItem img={logout} text={"Logout"} /></div>
                     </ul>
                 </div>
             </div>
